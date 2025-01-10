@@ -13,22 +13,11 @@ run-on-linux: build-go-lib
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
-run-on-windows: main.go
-	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o libgo-static.lib $<
-	ls
-	cd bar && cargo run && cd ..
-
-run-on-windows-shared: main.go
-	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o libgo-shared.dll $<
-	ls
+run-on-windows: mk-dir build-go-lib-shared
 	cd foo && cargo run && cd ..
 
-run-on-macos: build-go-lib-static
+run-on-macos: mk-dir build-go-lib-static
 	cd bar && cargo run && cd ..
-
-run-on-macos-shared: build-go-lib-shared
-	- cp -f $(BUILD_DIR)/libgo-shared.so $(BUILD_DIR)/libgo-shared.dylib
-	cd foo && cargo run && cd ..
 
 build-go-lib: mk-dir build-go-lib-shared build-go-lib-static
 
