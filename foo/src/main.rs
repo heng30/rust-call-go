@@ -36,7 +36,7 @@ fn main() {
             let lib = Library::new(&lib_path).unwrap();
             let sayhi_func: Symbol<unsafe extern "C" fn()> = lib.get(b"SayHi").unwrap();
 
-            sayhi_func(3, 5);
+            sayhi_func();
 
             let add_func: Symbol<unsafe extern "C" fn(u32, u32) -> u32> = lib.get(b"GoAdd")
                 .unwrap();

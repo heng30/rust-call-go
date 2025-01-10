@@ -1,10 +1,9 @@
-use std::env;
-use std::path::Path;
-
 fn main() {
-
     #[cfg(target_os = "linux")]
     {
+        use std::env;
+        use std::path::Path;
+
         let out_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
         let lib_dir = Path::new(&out_dir).join("..").join("build");
         println!("cargo:rustc-link-arg=-L");
