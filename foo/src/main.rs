@@ -17,7 +17,7 @@ fn main() {
         println!("Sum from Go: {}", sum);
     }
 
-    // #[cfg(target_os = "windows")]
+    #[cfg(target_os = "windows")]
     {
         use std::env;
         use std::path::Path;
