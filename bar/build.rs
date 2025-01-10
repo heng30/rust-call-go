@@ -9,5 +9,5 @@ fn main() {
 
     println!("cargo:rustc-link-arg=-L");
     println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
-    println!("cargo:rustc-link-lib=go-shared");
+    println!("cargo:rustc-link-lib=go-static");
 }
