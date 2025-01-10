@@ -7,11 +7,12 @@ GO_ENV_VARS = GOARCH=amd64
 GO_FLAGS_SHARED = -buildmode=c-shared
 GO_FLAGS_STATIC = -buildmode=c-archive
 
-.PHONY: all build clean
+.PHONY: all build run clean
 
 all: mk-dir build
 
 run: build
+	ls && ls build
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
