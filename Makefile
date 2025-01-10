@@ -14,6 +14,7 @@ run-on-linux: build-go-lib
 	cd bar && cargo run && cd ..
 
 run-on-windows: build-go-lib
+	cp -f $(BUILD_DIR)/libgo-static.a $(BUILD_DIR)/libgo-static.lib
 	cd bar && cargo run && cd ..
 
 run-on-macos: build-go-lib

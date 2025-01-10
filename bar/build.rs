@@ -16,7 +16,8 @@ fn main() {
 
     #[cfg(target_os = "windows")]
     {
-        let lib_dir = lib_dir.join("libgo-static.a");
-        println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
+        // let lib_dir = lib_dir.join("libgo-static.a");
+        // println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
+        println!("cargo:rustc-link-arg= /d/a/rust-call-go/rust-call-go/build/libgo-static.lib");
     }
 }
