@@ -28,9 +28,8 @@ jobs:
       - run: echo "end install Go..."
 
       - run: echo "start build..."
-      - run: make build
+      - run: make build-go-lib
       - run: sudo cp -f build/libgo-shared.so /lib
-      - run: sudo cp -f build/libgo-shared.so /lib64
-      - run: make run
+      - run: make run-on-linux
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."
