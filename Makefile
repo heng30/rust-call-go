@@ -7,7 +7,7 @@ GO_ENV_VARS =
 GO_FLAGS_SHARED = -buildmode=c-shared
 GO_FLAGS_STATIC = -buildmode=c-archive
 
-.PHONY: all build run run-on-windows clean
+.PHONY: all build run run-on-windows run-on-macos clean
 
 all: mk-dir build
 
@@ -16,6 +16,9 @@ run: build
 	cd bar && cargo run && cd ..
 
 run-on-windows: build
+	cd bar && cargo run && cd ..
+
+run-on-macos: build
 	cd bar && cargo run && cd ..
 
 build: mk-dir build-with-go-shared build-with-go-static
