@@ -26,9 +26,11 @@ build-with-go-static: build-go-lib-static
 
 build-go-lib-shared: main.go
 	$(GO_ENV_VARS) go build $(GO_FLAGS_SHARED) -o $(BUILD_DIR)/libgo-shared.so $<
+	- cp -f $(BUILD_DIR)/libgo-shared.so  $(BUILD_DIR)/libgo-shared.dll
 
 build-go-lib-static: main.go
 	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o $(BUILD_DIR)/libgo-static.a $<
+	- cp -f $(BUILD_DIR)/libgo-static.a  $(BUILD_DIR)/libgo-static.lib
 
 clean:
 	cd foo && cargo clean && cd ..

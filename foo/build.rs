@@ -7,7 +7,16 @@ fn main() {
         .join("..")
         .join("build");
 
-    println!("cargo:rustc-link-arg=-L");
-    println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
-    println!("cargo:rustc-link-lib=go-shared");
+    #[cfg(any(target_os = "linux", target_os = "macos"))]
+    {
+        println!("cargo:rustc-link-arg=-L");
+        println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
+        println!("cargo:rustc-link-lib=go-shared");
+    }
+
+    #[cfg(target_os = "windows")]
+    {
+        let lib_dir = lib_dir.jon("libgo-shared.dll");
+        println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
+    }
 }
