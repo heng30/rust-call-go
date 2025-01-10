@@ -27,7 +27,7 @@ jobs:
       - run: echo "end install Go..."
 
       - run: echo "start build..."
-      - run: make build-go-lib-shared
+      - run: make build-go-lib
       - run: sudo cp -f build/libgo-shared.so /usr/local/lib/libgo-shared.dylib
       - run: make run-on-macos-shared
       - run: echo "end build..."

@@ -27,7 +27,7 @@ run-on-macos: build-go-lib-static
 	cd bar && cargo run && cd ..
 
 run-on-macos-shared: build-go-lib-shared
-      - cp -f $(BUILD_DIR)/libgo-shared.so $(BUILD_DIR)/libgo-shared.dylib
+	- cp -f $(BUILD_DIR)/libgo-shared.so $(BUILD_DIR)/libgo-shared.dylib
 	cd foo && cargo run && cd ..
 
 build-go-lib: mk-dir build-go-lib-shared build-go-lib-static
