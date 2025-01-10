@@ -26,8 +26,8 @@ jobs:
       - run: echo "end install Go..."
 
       - run: echo "start build..."
-      - run: export LD_LIBRARY_PATH=`pwd`/build
-      - run: echo $LD_LIBRARY_PATH
+      - run: make build
+      - run: sudo mv build/*.so /lib64
       - run: make run
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."

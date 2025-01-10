@@ -12,7 +12,7 @@ GO_FLAGS_STATIC = -buildmode=c-archive
 all: mk-dir build
 
 run: build
-	ls && ls build
+	ls build
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
