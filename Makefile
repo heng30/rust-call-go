@@ -15,7 +15,7 @@ run: build
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
-build: build-with-go-shared build-with-go-static
+build: mk-dir build-with-go-shared build-with-go-static
 
 build-with-go-shared: build-go-lib-shared
 	cd foo && cargo build && cd ..
