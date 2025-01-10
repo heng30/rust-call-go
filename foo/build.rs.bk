@@ -6,7 +6,9 @@ fn main() {
 
     #[cfg(any(target_os = "linux", target_os = "macos"))]
     {
-        let lib_dir = Path::new(&out_dir).join("..").join("build");
+    let lib_dir = Path::new(&out_dir)
+        .join("..")
+        .join("build");
         println!("cargo:rustc-link-arg=-L");
         println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
         println!("cargo:rustc-link-lib=go-shared");

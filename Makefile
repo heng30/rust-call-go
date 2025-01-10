@@ -18,8 +18,11 @@ run-on-windows: main.go
 	ls
 	cd bar && cargo run && cd ..
 
-run-on-macos: build-go-lib
+run-on-macos: build-go-lib-static
 	cd bar && cargo run && cd ..
+
+run-on-macos-shared: build-go-lib-shared
+	cd foo && cargo run && cd ..
 
 build-go-lib: mk-dir build-go-lib-shared build-go-lib-static
 
