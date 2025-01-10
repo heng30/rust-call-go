@@ -26,6 +26,7 @@ jobs:
       - run: echo "end install Go..."
 
       - run: echo "start build..."
+      - run: ls build
       - run: make run
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."
