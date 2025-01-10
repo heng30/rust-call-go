@@ -13,7 +13,7 @@ run-on-linux: build-go-lib
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
-run-on-windows:
+run-on-windows: main.go
 	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o libgo-static.lib $<
 	ls
 	cd bar && cargo run && cd ..
