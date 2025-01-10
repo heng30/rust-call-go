@@ -27,7 +27,8 @@ jobs:
 
       - run: echo "start build..."
       - run: make build
-      - run: sudo mv build/*.so /lib64
+      - run: sudo cp -f build/libgo-shared.so /lib
+      - run: sudo cp -f build/libgo-shared.so /lib64
       - run: make run
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."
