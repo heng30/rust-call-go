@@ -13,9 +13,8 @@ run-on-linux: build-go-lib
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
-run-on-windows: mk-dir build-go-lib-shared
+run-on-windows:
 	$(GO_ENV_VARS) go build $(GO_FLAGS_SHARED) -o libgo-shared.dll main.go
-	ls
 	cd foo && cargo run && cd ..
 
 run-on-macos: mk-dir build-go-lib-static
