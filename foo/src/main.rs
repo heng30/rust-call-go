@@ -1,6 +1,3 @@
-#[allow(unused_imports)]
-#[allow(dead_code)]
-
 use std::ffi::c_int;
 
 extern "C" {
@@ -17,6 +14,8 @@ fn main() {
         println!("Sum from Go: {}", sum);
     }
 
+    #[allow(unused_imports)]
+    #[allow(dead_code)]
     #[cfg(target_os = "windows")]
     {
         use std::env;
@@ -24,8 +23,9 @@ fn main() {
         use libloading::{Library, Symbol};
 
         let out_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
-        let lib_path = Path::new(&out_dir).join("..").join("build").join(
-            "libgo-shared.so",
+        // let lib_path = Path::new(&out_dir).join("..").join("build").join(
+       let lib_path = Path::new(&out_dir).join("..").join(
+            "libgo-shared.dll",
         );
 
         let lib_path = format!(
