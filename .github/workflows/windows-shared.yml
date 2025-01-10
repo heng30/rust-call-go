@@ -1,4 +1,4 @@
-name: windows
+name: windows-shared
 on: [push]
 
 jobs:
@@ -27,6 +27,6 @@ jobs:
       - run: echo "end install Go..."
 
       - run: echo "start build..."
-      - run: make run-on-windows
+      - run: make run-on-windows-shared
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."

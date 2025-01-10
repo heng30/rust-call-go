@@ -18,6 +18,11 @@ run-on-windows: main.go
 	ls
 	cd bar && cargo run && cd ..
 
+run-on-windows-shared: main.go
+	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o libgo-shared.dll $<
+	ls
+	cd foo && cargo run && cd ..
+
 run-on-macos: build-go-lib-static
 	cd bar && cargo run && cd ..
 
