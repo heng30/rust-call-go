@@ -16,7 +16,7 @@ fn main() {
 
     #[cfg(target_os = "windows")]
     {
-        let lib_dir = lib_dir.jon("libgo-shared.dll");
+        let lib_dir = lib_dir.join("libgo-shared.dll");
         println!("cargo:rustc-link-arg={}", lib_dir.to_str().unwrap());
     }
 }

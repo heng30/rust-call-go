@@ -22,6 +22,8 @@ jobs:
       - run: echo "start install Go..."
       - name: Install Go
         uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
       - run: echo "end install Go..."
 
       - run: echo "start build..."
