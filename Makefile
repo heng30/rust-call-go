@@ -1,5 +1,3 @@
-#!/bin/sh
-
 DIR = $(shell pwd)
 BUILD_DIR = $(DIR)/build
 
