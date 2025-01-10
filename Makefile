@@ -14,6 +14,7 @@ run-on-linux: build-go-lib
 	cd bar && cargo run && cd ..
 
 run-on-windows: mk-dir build-go-lib-shared
+	ls && ls build
 	cd foo && cargo run && cd ..
 
 run-on-macos: mk-dir build-go-lib-static
