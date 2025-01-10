@@ -28,7 +28,7 @@ jobs:
 
       - run: echo "start build..."
       - run: make build-go-lib-shared
-      - run: sudo cp -f build/libgo-shared.so /usr/local/lib
+      - run: sudo cp -f build/libgo-shared.so /usr/local/lib/libgo-shared.dylib
       - run: make run-on-macos-shared
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."
