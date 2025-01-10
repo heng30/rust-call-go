@@ -2,7 +2,7 @@ DIR = $(shell pwd)
 BUILD_DIR = $(DIR)/build
 
 # GO_ENV_VARS = GOOS=linux GOARCH=amd64
-GO_ENV_VARS = GOARCH=amd64
+GO_ENV_VARS =
 
 GO_FLAGS_SHARED = -buildmode=c-shared
 GO_FLAGS_STATIC = -buildmode=c-archive
