@@ -36,7 +36,7 @@ fn main() {
         println!("shared lib path: {}", lib_path);
 
         unsafe {
-            let lib = Library::new(&lib_path)?;
+            let lib = Library::new(&lib_path).unwrap();
             let sayhi_func: Symbol<unsafe extern "C" fn(u32, u32) -> u32> = lib.get(b"SayHi")
                 .unwrap();
 
