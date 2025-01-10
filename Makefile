@@ -13,11 +13,9 @@ run-on-linux: build-go-lib
 	cd foo && cargo run && cd ..
 	cd bar && cargo run && cd ..
 
-run-on-windows: build-go-lib
-	ls build
-	cp -f $(BUILD_DIR)/libgo-static.a $(BUILD_DIR)/libgo-static.lib
-	cp -f $(BUILD_DIR)/libgo-shared.so $(BUILD_DIR)/libgo-shared.dll
-	ls build
+run-on-windows:
+	$(GO_ENV_VARS) go build $(GO_FLAGS_STATIC) -o libgo-static.lib $<
+	ls
 	cd bar && cargo run && cd ..
 
 run-on-macos: build-go-lib
