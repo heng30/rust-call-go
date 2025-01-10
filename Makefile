@@ -12,8 +12,10 @@ GO_FLAGS_STATIC = -buildmode=c-archive
 all: mk-dir build
 
 run: build
-	ls build
 	cd foo && cargo run && cd ..
+	cd bar && cargo run && cd ..
+
+run-windows: build
 	cd bar && cargo run && cd ..
 
 build: mk-dir build-with-go-shared build-with-go-static
